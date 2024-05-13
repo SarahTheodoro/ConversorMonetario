@@ -14,11 +14,11 @@ class appWidget extends StatelessWidget {
     return MaterialApp(
         theme: ThemeData(
           primaryColor: Colors.blue,
-          scaffoldBackgroundColor: Colors.black, // Cor de fundo aqui
+          scaffoldBackgroundColor: Colors.black, 
           textTheme: TextTheme(
-            bodyText1: TextStyle(color: Colors.blue), // Cor do corpo do texto
+            bodyText1: TextStyle(color: Colors.blue), 
             bodyText2: TextStyle(
-                color: Colors.blue), // Cor do corpo do texto (variação)
+                color: Colors.blue),
           ),
         ),
         home: Scaffold(
@@ -63,14 +63,14 @@ class HomePageState extends State<HomePage> {
                     decoration: InputDecoration(
                         labelText: 'REAIS',
                         labelStyle: TextStyle(color: Colors.blue),
-                        prefixText: 'R\$', // Texto pré-definido
+                        prefixText: 'R\$', 
                         prefixStyle: TextStyle(color: Colors.blue)),
                     onChanged: (value) {
                       double realValue = double.tryParse(value) ?? 0.0;
                       double dollarValue = realValue /
-                          5.20; // Supondo que 1 real = 0.192 dólares (5.20 reais = 1 dólar)
+                          5.20; 
                       double euroValue = realValue /
-                          5.55; // Supondo que 1 real = 0.180 euros (5.55 reais = 1 euro)
+                          5.55;
                       dollarController.text = dollarValue.toStringAsFixed(2);
                       euroController.text = euroValue.toStringAsFixed(2);
                     },
@@ -86,14 +86,14 @@ class HomePageState extends State<HomePage> {
                     decoration: InputDecoration(
                         labelText: 'DÓLARES',
                         labelStyle: TextStyle(color: Colors.blue),
-                        prefixText: 'U\$', // Texto pré-definido
+                        prefixText: 'U\$',
                         prefixStyle: TextStyle(color: Colors.blue)),
                     onChanged: (value) {
                       double dollarValue = double.tryParse(value) ?? 0.0;
                       double realValue = dollarValue *
-                          5.20; // Supondo que 1 dólar = 5.20 reais
+                          5.20; 
                       double euroValue = realValue /
-                          5.55; // Supondo que 1 dólar = 0.938 euros (5.55 reais = 1 euro)
+                          5.55;
                       realController.text = realValue.toStringAsFixed(2);
                       euroController.text = euroValue.toStringAsFixed(2);
                     },
@@ -109,14 +109,14 @@ class HomePageState extends State<HomePage> {
                     decoration: InputDecoration(
                         labelText: 'EUROS',
                         labelStyle: TextStyle(color: Colors.blue),
-                        prefixText: '€U', // Texto pré-definido
+                        prefixText: '€U',
                         prefixStyle: TextStyle(color: Colors.blue)),
                     onChanged: (value) {
                       double euroValue = double.tryParse(value) ?? 0.0;
                       double realValue =
-                          euroValue * 5.55; // Supondo que 1 euro = 5.55 reais
+                          euroValue * 5.55;
                       double dollarValue = realValue /
-                          5.20; // Supondo que 1 euro = 1.07 dólares (5.20 reais = 1 dólar)
+                          5.20; 
                       realController.text = realValue.toStringAsFixed(2);
                       dollarController.text = dollarValue.toStringAsFixed(2);
                     },
@@ -138,6 +138,6 @@ class HomePageState extends State<HomePage> {
 class creditos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(child: Text('Criador: \Daniel Soares Pesce'));
+    return Container(child: Text('Por: Sarah Kristiny'));
   }
 }
